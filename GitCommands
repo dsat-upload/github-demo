@@ -1,8 +1,0 @@
-1) To create username and email
-git config --global user.name "bla bla"
-git config --global user.email "tla@bla.com"
-
-2) To check git config info
-git config --global --list
-
-3) 
