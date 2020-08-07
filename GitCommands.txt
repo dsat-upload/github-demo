@@ -1,0 +1,16 @@
+1) To create username and email
+git config --global user.name "bla bla"
+git config --global user.email "tla@bla.com"
+
+2) To check git config info
+git config --global --list
+
+3) git clone <https link of the repo from the github>
+
+4)git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+origin/master is the branch on the github repo
+
+5) 
