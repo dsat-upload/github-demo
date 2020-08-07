@@ -36,4 +36,15 @@ git pull
 provide the merge comments.
 then run git push origin master to push your code to remote repo
 
-8) 
+8) To create a repo
+git init <repo name>
+
+When ls -al is run under the repo folder, .git directory appears which confirms that a repo is created and git manages this
+
+9) Say you already have a folder and bunch of files under that. But this folder is not managed by git. 
+Run git init in that folder. This instructs the git to mamage this folder, and .git directory must appear. 
+
+10) rm -rf .git 
+This will remove the .git directory hence telling git not to manage the folder anymore.
+
+11) 
