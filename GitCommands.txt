@@ -14,8 +14,13 @@ Your branch is up to date with 'origin/master'.
 origin/master is the branch on the github repo
 
 5) There are three stages on our local repo
-working directory/  [git add <file> ->]               staged area  [git commit -m ""<file> ->]   commited
-unstages area       [git restore --staged <file> <-] 
+ a) working directory to staged area
+    git add <file>
+ b) staged area to committed
+    git commit -m ""<file>
+ c) staged area to working area
+    git restore --staged <file>
+
 
 6) When local repo new code is pushed to the remote repo, the content of the remote repo must be upto date on the local repo. Else git will error out and notifies it to the user
 
@@ -32,9 +37,9 @@ hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 7) So first, pull the contents of the remote repo first to update the local repo.
-git pull
-provide the merge comments.
-then run git push origin master to push your code to remote repo
+   git pull
+   provide the merge comments.
+   then run git push origin master to push your code to remote repo
 
 8) To create a repo
 git init <repo name>
