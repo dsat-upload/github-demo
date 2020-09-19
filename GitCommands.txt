@@ -14,12 +14,15 @@ Your branch is up to date with 'origin/master'.
 origin/master is the branch on the github repo
 
 5) There are three stages on our local repo
- a) working directory to staged area
+ a) working directory to staged area. (In working directory, git is not tracking it yet)
     git add <file>
+    git add .  [to add all files recursively]
  b) staged area to committed
     git commit -m ""<file>
  c) staged area to working area
     git restore --staged <file>
+ d) To discard changes in working directory
+    git restore <file>
 
 
 6) When local repo new code is pushed to the remote repo, the content of the remote repo must be upto date on the local repo. Else git will error out and notifies it to the user
@@ -41,15 +44,73 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
    provide the merge comments.
    then run git push origin master to push your code to remote repo
 
-8) To create a repo
+8) To create a local repo
 git init <repo name>
 
 When ls -al is run under the repo folder, .git directory appears which confirms that a repo is created and git manages this
 
+$ ls -al | grep git
+drwxr-xr-x    12 dsat  staff       384 Sep 15 09:33 .git
+-rw-r--r--     1 dsat  staff       760 Aug  7 18:03 .gitconfig
+-rw-r--r--@    1 dsat  staff       181 Feb 20  2020 .gitflow_export
+-rw-r--r--     1 dsat  staff       402 Nov 12  2019 .gitignore
+
+What does each file mean?
+<>
+
+.git has all these contents
+COMMIT_EDITMSG	HEAD		config		description	hooks		index		info		logs		objects		refs
+
+
+
 9) Say you already have a folder and bunch of files under that. But this folder is not managed by git. 
 Run git init in that folder. This instructs the git to mamage this folder, and .git directory must appear. 
 
-10) rm -rf .git 
+10) to join an existing project on github, fork it. 
+eg: there is a repo called userb/repo1
+After forking you should see that repo copied under your username
+dsat-upload/repo1
+Now, to have this cloned to you local repo
+copy the https link got to local terminal and run 
+
+git clone <https link> [In the link you should see your username]
+
+11) Push (send changes from local to GitHub)
+git push origin master
+
+origin - name of the remote repo
+master - name of the branch of that remote repo
+
+12)Pull. (From github to local) Run this before push to be uptodate with the remote repo
+git pull origin master
+
+13) Add and commit in one line
+git commit -a -m 'msg' <file>
+-a = add to stage
+
+14) git ls-files
+to see all the files tracked by git
+
+15) Renaming and moving files
+git mv <current file name> <new file name>
+
+
+
+
+Our favs- RM -RF
+
+1) rm -rf .git 
 This will remove the .git directory hence telling git not to manage the folder anymore.
 
-11) 
+2) Removing a single file with Git without deleting it
+git rm --cached filexample.txt
+Then when you run git push, the files will be removed in the remote repo.
+
+3) Removing multiple files with Git without deleting them
+git rm --cached file1.txt file2.txt file3.txt
+
+4) Removing an entire directory without deleting the files
+git rm -r --cached folder
+
+
+
